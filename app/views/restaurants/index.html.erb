@@ -1,5 +1,14 @@
+<p id="notice"><%= notice %></p>
+
 <div class="container">
   <h1>Welcome to Yelp by Le Wagon on-line</h1>
-  <% @restaurants do |restaurant| %>
+  <br>
+  <%= link_to "Add new restaurant", new_restaurant_path %>
+  <br>
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant.name, restaurant %>
+    <p><%= restaurant.address %></p>
+    <p><%= restaurant.phone_number %></p>
+    <p><%= restaurant.category %></p>
   <% end %>
 </div>
